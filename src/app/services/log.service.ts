@@ -25,14 +25,9 @@ export class LogService {
   }
 
   private log(level: string, message: string): void {
-    if (!environment.production) {
-      console.log(`[${level.toUpperCase()}]: ${message}`);
-    } else {
-      // Send log to server in production
       this.http
         .post(this.logServerUrl, { level, message })
         .subscribe(() => console.log(`[${level.toUpperCase()}]: ${message}`));
-    }
   }
 
   getLogs(): Observable<Logs> {
