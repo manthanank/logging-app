@@ -24,10 +24,9 @@ export class LogService {
     this.log('error', message);
   }
 
-  private log(level: string, message: string): void {
-      this.http
-        .post(this.logServerUrl, { level, message })
-        .subscribe(() => console.log(`[${level.toUpperCase()}]: ${message}`));
+  log(level: string, message: string) {
+      reture this.http
+        .post(this.logServerUrl, { level, message });
   }
 
   getLogs(): Observable<Logs> {
