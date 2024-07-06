@@ -26,6 +26,7 @@ export class AppComponent implements OnInit {
     this.logService.logInfo('App component initialized');
     this.logService.logWarning('App component initialized');
     this.logService.logError('App component initialized');
+    this.getLogs();
   }
 
   getLogs(): void {
